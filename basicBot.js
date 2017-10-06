@@ -2681,12 +2681,16 @@
                     else {
                         if (basicBot.room.roulette.rouletteStatus && basicBot.room.roulette.participants.indexOf(chat.uid) < 0) {
                             basicBot.room.roulette.participants.push(chat.uid);
-                            API.sendChat(subChat(basicBot.chat.roulettejoin, {
-                                name: chat.un
-                            }));
+                            API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                         }
+                        else {
+         		if (basicBot.room.raffle.roulettteStatus && basicBot.room.roulettte.participants.indexOf(chat.uid) < 0) {
+                            basicBot.room.roulettte.participants.push(chat.uid);
+                            API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                     }
-                }
+        	  }
+        	} 
+              } 
             },
 
             jointimeCommand: {
