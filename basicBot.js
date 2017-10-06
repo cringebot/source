@@ -406,8 +406,7 @@
                     }, 1 * 1000, winner, pos);
                 }
             },
-            usersUsedThor: []
-        },
+    
 	        roulettte: {
                 roulettteStatus: false,
                 participants: [],
