@@ -2684,7 +2684,7 @@
                             API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                         }
                         else {
-         		if (basicBot.room.raffle.roulettteStatus && basicBot.room.roulettte.participants.indexOf(chat.uid) < 0) {
+         		if (basicBot.room.roulettte.roulettteStatus && basicBot.room.roulettte.participants.indexOf(chat.uid) < 0) {
                             basicBot.room.roulettte.participants.push(chat.uid);
                             API.sendChat(subChat(basicBot.chat.roulettejoin, {name: chat.un}));
                     }
