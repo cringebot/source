@@ -2875,8 +2875,6 @@
                                         name: from,
                                         link: linkToSong
                                     }));
-                                );
-                           
                         }
                     }
                 }
