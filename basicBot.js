@@ -2561,7 +2561,7 @@
             },
 	 wootCommand: {
                 command: 'woot',
-                rank: 'residentdj',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2574,7 +2574,7 @@
             },
 	mehCommand: {
                 command: 'meh',
-                rank: 'residentdj',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
