@@ -2870,7 +2870,7 @@
                                 }));
                             }
                             if (media.format === 2) {
-                                var linkToSong = SC.get('/tracks/' + media.cid;
+                                var linkToSong = SC.get('/tracks/' + media.cid);
                                     API.sendChat(subChat(basicBot.chat.songlink, {
                                         name: from,
                                         link: linkToSong
