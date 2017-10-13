@@ -2862,19 +2862,16 @@
                         var isDj = false;
                         if (dj === chat.uid) isDj = true;
                         if (perm >= API.ROLE.DJ || isDj) {
-                            if (media.format === 1) {
-                                var linkToSong = 'https://youtu.be/' + media.cid;
-                                API.sendChat(subChat(basicBot.chat.songlink, {
-                                    name: from,
-                                    link: linkToSong
-                                }));
-                            }
-                            if (media.format === 2) {
-                                var linkToSong = SC.get('/tracks/' + media.cid);
-                                    API.sendChat(subChat(basicBot.chat.songlink, {
-                                        name: from,
-                                        link: linkToSong
-                                    }));
+ 		         if (media.format === 1) {
+        bot.sendChat("@" + data.from + " " + "http://youtu.be/" + media.cid);
+      } else {
+        var id = media.cid;
+        SC.get('/tracks', {
+          ids: id,
+        }, function(tracks) {
+          bot.sendChat("@" + data.from + " " + tracks[0].permalink_url);
+        });
+      }
                         }
                     }
                 }
