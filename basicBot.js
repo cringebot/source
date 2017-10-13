@@ -2870,13 +2870,13 @@
                                 }));
                             }
                             if (media.format === 2) {
-                                SC.get('/tracks/' + media.cid, function(sound) {
+                                var linkToSong = SC.get('/tracks/' + media.cid;
                                     API.sendChat(subChat(basicBot.chat.songlink, {
                                         name: from,
-                                        link: sound.permalink_url
+                                        link: linkToSong
                                     }));
                                 });
-                            }
+                           
                         }
                     }
                 }
