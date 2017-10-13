@@ -241,14 +241,14 @@
         return str;
     };
 
-    var botCreator = 'Suky';
-    var botMaintainer = 'Benzi';
+    var botCreator = 'Yemasthui';
+    var botMaintainer = 'Suky';
     var botCreatorIDs = [4856169];
 
     var basicBot = {
         version: '2.11.1',
         status: false,
-        name: 'TRCCBot',
+        name: 'BMN',
         loggedInID: null,
         scriptLink: 'https://rawgit.com/cringebot/source/master/basicBot.js',
         cmdLink: null,
@@ -258,7 +258,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: 'TRCCBot',
+            botName: 'BMN',
             language: 'english',
             chatLink: 'https://rawgit.com/cringebot/basicBot/master/lang/en.json',
             scriptLink: 'https://rawgit.com/cringebot/source/master/basicBot.js',
@@ -266,7 +266,7 @@
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
-            autowoot: true,
+            autowoot: false,
             autoskip: false,
             smartSkip: true,
             cmdDeletion: true,
@@ -281,8 +281,8 @@
             cycleGuard: true,
             maximumCycletime: 10,
             voteSkip: true,
-            voteSkipLimit: 5,
-            historySkip: false,
+            voteSkipLimit: 3,
+            historySkip: true,
             timeGuard: true,
             maximumSongLength: 6,
             autodisable: false,
@@ -302,18 +302,18 @@
             ],
             afkpositionCheck: 15,
             afkRankCheck: 'ambassador',
-            motdEnabled: false,
+            motdEnabled: true,
             motdInterval: 5,
-            motd: 'Temporary Message of the Day',
+            motd: 'We are very thankful for our supporters! Appreciate y`all being here.',
             filterChat: true,
             etaRestriction: false,
             welcome: true,
-            opLink: null,
-            rulesLink: null,
-            themeLink: null,
-            fbLink: null,
-            youtubeLink: null,
-            website: null,
+            opLink: "https://goo.gl/Y1hpPb",
+            rulesLink: "https://goo.gl/0o8WDH",
+            themeLink: "Rap, Trap, Phonk, Dub, w a v e , anything w / Bass! ",
+            fbLink: "https://www.facebook.com/bassmusicnetwork/",
+            youtubeLink: "https://www.youtube.com/channel/UCqcmWZmqlqYV2wWuD9QkO3Q",
+            website: "http://bassmusicnetwork.com/",
             intervalMessages: [],
             messageInterval: 5,
             songstats: true,
@@ -2467,6 +2467,58 @@
                 }
             },
 
+	  discordCommand: {
+                command: 'discord',
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (typeof basicBot.settings.fbLink === 'string')
+                            API.sendChat("/me Join our discord server: https://discord.gg/ySWQwTm");
+                    }
+                }
+            },
+	twitterCommand: {
+                command: 'twitter',
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (typeof basicBot.settings.fbLink === 'string')
+                            API.sendChat("/me Follow us on twitter: https://twitter.com/BassMusicNetwrk");
+                    }
+                }
+            },
+	fbgroupCommand: {
+                command: 'fbgroup',
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (typeof basicBot.settings.fbLink === 'string')
+                            API.sendChat("/me Join our facebook group: https://www.facebook.com/groups/bassmusicnetwork/");
+                    }
+                }
+            },
+	soundcloudCommand: {
+                command: 'soundcloud',
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        if (typeof basicBot.settings.fbLink === 'string')
+                            API.sendChat("/me Follow us on soundcloud: https://soundcloud.com/bass-music-network");
+                    }
+                }
+            },
             fbCommand: {
                 command: 'fb',
                 rank: 'user',
@@ -2863,13 +2915,13 @@
                         if (dj === chat.uid) isDj = true;
                         if (perm >= API.ROLE.DJ || isDj) {
  		         if (media.format === 1) {
-        bot.sendChat("@" + data.from + " " + "http://youtu.be/" + media.cid);
+        bot.sendChat("http://youtu.be/" + media.cid);
       } else {
         var id = media.cid;
         SC.get('/tracks', {
           ids: id,
         }, function(tracks) {
-          bot.sendChat("@" + data.from + " " + tracks[0].permalink_url);
+          bot.sendChat(" " + tracks[0].permalink_url);
         });
       }
                         }
