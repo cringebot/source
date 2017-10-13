@@ -2568,6 +2568,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         $("#meh").click();
+			API.sendChat("/me Meh.. :thumbsdown:");
                     }
                 }
             },
@@ -2580,6 +2581,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         $("#woot").click();
+			API.sendChat("/me This track is :fire:");	    
                     }
                 }
             },
