@@ -2568,7 +2568,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         $("#meh").click();
-			API.sendChat("/me Meh.. :thumbsdown:");
+			API.sendChat("/me Meh.. :-1:");
                     }
                 }
             },
