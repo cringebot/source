@@ -2247,7 +2247,7 @@
                     }
                 }
             },
-
+/*
             dclookupCommand: {
                 command: ['dclookup', 'dc'],
                 rank: 'user',
@@ -2275,7 +2275,7 @@
                     }
                 }
             },
-
+*/
             /*
             // This does not work anymore.
             deletechatCommand: {
