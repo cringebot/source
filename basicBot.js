@@ -2559,19 +2559,6 @@
                     }
                 }
             },
-           mehCommand: {
-                command: 'meh',
-                rank: 'residentdj',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        $("#meh").click();
-			API.sendChat("/me Meh.. :-1:");
-                    }
-                }
-            },
 	 wootCommand: {
                 command: 'woot',
                 rank: 'residentdj',
@@ -2582,6 +2569,19 @@
                     else {
                         $("#woot").click();
 			API.sendChat("/me This track is :fire:");	    
+                    }
+                }
+            },
+	mehCommand: {
+                command: 'meh',
+                rank: 'residentdj',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        $("#meh").click();
+			API.sendChat("/me Meh... :-1:");
                     }
                 }
             },
