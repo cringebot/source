@@ -284,7 +284,7 @@
             voteSkipLimit: 3,
             historySkip: true,
             timeGuard: true,
-            maximumSongLength: 6,
+            maximumSongLength: 8,
             autodisable: false,
             commandCooldown: 30,
             usercommandsEnabled: true,
@@ -2559,7 +2559,30 @@
                     }
                 }
             },
-
+           mehCommand: {
+                command: 'meh',
+                rank: 'host',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        $("#meh").click();
+                    }
+                }
+            },
+	 wootCommand: {
+                command: 'woot',
+                rank: 'host',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        $("#woot").click();
+                    }
+                }
+            },
             forceskipCommand: {
                 command: ['forceskip', 'fs'],
                 rank: 'bouncer',
