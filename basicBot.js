@@ -1890,7 +1890,21 @@
                     }
                 }
             },
-
+            talkCommand: {
+                command: ['talk', 't'],
+                rank: 'mod',
+                type: 'startsWith',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        var crowd = API.getUsers();
+                        var msg = chat.message;
+                        var argument = msg.substring(cmd.length + 1).replace(/@/g, '');
+                        API.sendChat("" + argument);
+                    }
+                }
+            },
             ballCommand: {
                 command: ['8ball', 'ask'],
                 rank: 'user',
