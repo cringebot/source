@@ -2561,7 +2561,7 @@
             },
 	 wootCommand: {
                 command: 'woot',
-                rank: 'bouncer',
+                rank: 'residentdj',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2574,7 +2574,7 @@
             },
 	mehCommand: {
                 command: 'meh',
-                rank: 'bouncer',
+                rank: 'residentdj',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -3153,18 +3153,6 @@
                 }
             },
 
-            mehCommand: {
-                command: 'meh',
-                rank: 'mod',
-                type: 'exact',
-                functionality: function(chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
-                    else {
-                        $('#meh').click();
-                    }
-                }
-            },
 
             motdCommand: {
                 command: 'motd',
