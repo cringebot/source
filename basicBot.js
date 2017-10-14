@@ -2568,7 +2568,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         $("#woot").click();
-			API.sendChat("/me This track is :fire:");	    
+			API.sendChat("/me This track is :fire: good play!");	    
                     }
                 }
             },
