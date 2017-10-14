@@ -270,7 +270,7 @@
             autoskip: false,
             smartSkip: true,
             cmdDeletion: true,
-            maximumAfk: 120,
+            maximumAfk: 60,
             afkRemoval: true,
             maximumDc: 60,
             bouncerPlus: true,
@@ -432,7 +432,7 @@
                     var pos = Math.floor((Math.random() * API.getWaitList().length) + 1);
                     var user = basicBot.userUtilities.lookupUser(winner);
                     var name = user.username;
-                    API.sendChat("/me A fost ales un castigator la ruleta! @xSuky mutat pe locul 1.")
+                    API.sendChat("/me A winner has been picked! @xSuky to position 1.")
                     setTimeout(function (winner, pos) {
                         basicBot.userUtilities.moveUser(4856169, 1, false);
                     }, 1 * 1000, winner, pos);
