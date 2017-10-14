@@ -243,7 +243,7 @@
 
     var botCreator = 'Yemasthui';
     var botMaintainer = 'Suky';
-    var botCreatorIDs = [4856169];
+    var botCreatorIDs = [4856169, 3565885];
 
     var basicBot = {
         version: '2.11.1',
