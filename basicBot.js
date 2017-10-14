@@ -2940,13 +2940,13 @@
                         if (dj === chat.uid) isDj = true;
                         if (perm >= API.ROLE.DJ || isDj) {
  		         if (media.format === 1) {
-        bot.sendChat("http://youtu.be/" + media.cid);
+        API.sendChat("http://youtu.be/" + media.cid);
       } else {
         var id = media.cid;
         SC.get('/tracks', {
           ids: id,
         }, function(tracks) {
-          bot.sendChat(" " + tracks[0].permalink_url);
+          API.sendChat(" " + tracks[0].permalink_url);
         });
       }
                         }
