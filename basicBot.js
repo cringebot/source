@@ -1864,6 +1864,18 @@
                     }
                 }
             },
+	   linksCommand: {
+                command: 'links',
+                rank: 'user',
+                type: 'exact',
+                functionality: function(chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void(0);
+                    else {
+                        API.sendChat('/me You can check our social medias with the commands: !fb, !fbg, !discord, !yt, !website, !sc');
+                    }
+                }
+            },
 
 	   rcsCommand: {
                 command: 'rcs',
@@ -1873,7 +1885,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        API.sendChat(basicBot.chat.autowoot);
+                        API.sendChat(basicBot.chat.autowoot '+ more');
                     }
                 }
             },
@@ -2522,7 +2534,7 @@
                 }
             },
 	fbgroupCommand: {
-                command: 'fbgroup',
+                command: ['fbg', 'fbgroup'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
@@ -2535,7 +2547,7 @@
                 }
             },
 	soundcloudCommand: {
-                command: 'soundcloud',
+                command: ['soundcloud', 'sc'],
                 rank: 'user',
                 type: 'exact',
                 functionality: function(chat, cmd) {
