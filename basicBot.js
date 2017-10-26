@@ -641,7 +641,9 @@
                 var newPosition = user.lastDC.position;
 		if (newPosition <= 0) return subChat(basicBot.chat.notdisconnectedwb, {name: name});
                 var msg = subChat(basicBot.chat.validdc, {name: basicBot.userUtilities.getUser(user).username, time: time, position: newPosition});
-                basicBot.userUtilities.moveUser(user.id, newPosition, true);
+		setTimeout(function() {
+               		basicBot.userUtilities.moveUser(user.id, newPosition, true);
+                    }, 3000);
                 return msg;
             }
         },
