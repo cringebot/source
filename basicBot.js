@@ -1920,7 +1920,7 @@
             },
             talkCommand: {
                 command: ['talk', 't'],
-                rank: 'mod',
+                rank: 'host',
                 type: 'startsWith',
                 functionality: function(chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
@@ -3663,7 +3663,7 @@
                     }
                 }
             },
-/*
+
             sourceCommand: {
                 command: 'source',
                 rank: 'user',
@@ -3672,11 +3672,11 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void(0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void(0);
                     else {
-                        API.sendChat('/me basicBot is an open-source bot for plug.dj. More info can be found here: https://github.com/basicBot/source');
+                        API.sendChat('/me Made by xSuky from basicbot source');
                     }
                 }
             },
-*/
+
             statusCommand: {
                 command: 'status',
                 rank: 'bouncer',
