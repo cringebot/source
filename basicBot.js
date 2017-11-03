@@ -755,7 +755,7 @@
                         var user = basicBot.userUtilities.lookupUser(id);
                         if (typeof user !== 'boolean') {
                             var plugUser = basicBot.userUtilities.getUser(user);
-                            if (basicBot.userUtilities.getPermission(plugUser) < rank) {
+                            if (basicBot.userUtilities.getPermission(plugUser) <= rank) {
                                 var name = plugUser.username;
                                 var lastActive = basicBot.userUtilities.getLastActivity(user);
                                 var inactivity = Date.now() - lastActive;
