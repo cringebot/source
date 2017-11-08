@@ -1,18 +1,5 @@
-/**
-
- Copyright © 2014-2017 basicBot
-
- Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
- This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
-
- */
-
 (function() {
 
-    /*window.onerror = function() {
-        var room = JSON.parse(localStorage.getItem('basicBotRoom'));
-        window.location = 'https://plug.dj' + room.name;
-    };*/
 
     API.getWaitListPosition = function(id) {
         if (typeof id === 'undefined' || id === null) {
@@ -745,7 +732,6 @@
             },
             afkCheck: function() {
                 if (!basicBot.status || !basicBot.settings.afkRemoval) return void(0);
-                var rank = basicBot.roomUtilities.rankToNumber(basicBot.settings.afkRankCheck);
                 var djlist = API.getWaitList();
                 var lastPos = Math.min(djlist.length, basicBot.settings.afkpositionCheck);
                 if (lastPos - 1 > djlist.length) return void(0);
@@ -755,7 +741,8 @@
                         var user = basicBot.userUtilities.lookupUser(id);
                         if (typeof user !== 'boolean') {
                             var plugUser = basicBot.userUtilities.getUser(user);
-                            if (basicBot.userUtilities.getPermission(plugUser) <= rank) {
+			    if (basicBot.userUtilities.getPermission(pluguser) >= API.ROLE.HOST) return false;
+  			     {
                                 var name = plugUser.username;
                                 var lastActive = basicBot.userUtilities.getLastActivity(user);
                                 var inactivity = Date.now() - lastActive;
