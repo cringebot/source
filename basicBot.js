@@ -741,7 +741,7 @@
                         var user = basicBot.userUtilities.lookupUser(id);
                         if (typeof user !== 'boolean') {
                             var plugUser = basicBot.userUtilities.getUser(user);
-			    if (basicBot.userUtilities.getPermission(pluguser) >= API.ROLE.HOST) return false;
+			    if (basicBot.userUtilities.getPermission(pluguser) < API.ROLE.HOST) return false;
   			     {
                                 var name = plugUser.username;
                                 var lastActive = basicBot.userUtilities.getLastActivity(user);
