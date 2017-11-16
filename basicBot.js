@@ -288,7 +288,7 @@
                 ['unavailable', 'The song you played was not available for some users. ']
             ],
             afkpositionCheck: 15,
-            afkRankCheck: 'co-host',
+            afkRankCheck: 'host',
             motdEnabled: true,
             motdInterval: 5,
             motd: 'We are very thankful for our supporters! Appreciate y`all being here.',
