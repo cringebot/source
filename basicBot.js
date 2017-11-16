@@ -288,7 +288,7 @@
                 ['unavailable', 'The song you played was not available for some users. ']
             ],
             afkpositionCheck: 15,
-            afkRankCheck: 'host',
+            afkRankCheck: 'co-host',
             motdEnabled: true,
             motdInterval: 5,
             motd: 'We are very thankful for our supporters! Appreciate y`all being here.',
@@ -509,7 +509,7 @@
                 else u = API.getUser(obj);
                 if (botCreatorIDs.indexOf(u.id) > -1) return 9999;
 
-                if (u.gRole < 1000) return u.role;
+                if (u.gRole < 3000) return u.role;
                 else {
                     switch (u.gRole) {
                         case 3:
@@ -741,6 +741,7 @@
                         var user = basicBot.userUtilities.lookupUser(id);
                         if (typeof user !== 'boolean') {
                             var plugUser = basicBot.userUtilities.getUser(user);
+                            if (rank !== null && basicBot.userUtilities.getPermission(plugUser) <= rank) {
   			     {
                                 var name = plugUser.username;
                                 var lastActive = basicBot.userUtilities.getLastActivity(user);
@@ -4356,9 +4357,9 @@
                                     var rank = 'Host';
                                 }
 
-                                if ([3, 3000].indexOf(rawrank.gRole) > -1) {
+                                if (rawrank.gRole == 3000) {
                                     var rank = 'Brand Ambassador';
-                                } else if ([5, 5000].indexOf(rawrank.gRole) > -1) {
+                                } else if (rawrank.gRole == 5000) {
                                     var rank = 'Admin';
                                 }
 
