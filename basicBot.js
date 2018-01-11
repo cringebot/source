@@ -1035,6 +1035,7 @@
             }
         },
         eventDjadvance: function(obj) {
+	    if (!obj.dj) return;
             if (basicBot.settings.autowoot) {
                 $('#woot').click(); // autowoot
             }
@@ -1168,11 +1169,12 @@
                 }));
                 user.ownSong = false;
             }
-            clearTimeout(basicBot.room.autoskipTimer);
+            clearTimeout(basicBot.room.autoskipTimer);se
             if (basicBot.settings.autoskip) {
                 var remaining = obj.media.duration * 1000;
                 var startcid = API.getMedia().cid;
                 basicBot.room.autoskipTimer = setTimeout(function() {
+		if (!API.getMedia()) return;
                     var endcid = API.getMedia().cid;
                     if (startcid === endcid) {
                         //API.sendChat('Song stuck, skipping...');
