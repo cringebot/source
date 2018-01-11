@@ -287,8 +287,8 @@
                 ['nsfw', 'The song you contained was NSFW (image or sound). '],
                 ['unavailable', 'The song you played was not available for some users. ']
             ],
-            afkpositionCheck: 15,
-            afkRankCheck: 'host',
+            afkpositionCheck: 1,
+            afkRankCheck: 'cohost',
             motdEnabled: true,
             motdInterval: 5,
             motd: 'We are very thankful for our supporters! Appreciate y`all being here.',
