@@ -99,7 +99,7 @@
 
     var loadChat = function(cb) {
         if (!cb) cb = function() {};
-        $.get('https://raw.github.com/cringebot/source/master/lang/langIndex.json', function(json) {
+        $.get('https://raw.githack.com/cringebot/source/master/lang/langIndex.json', function(json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== 'undefined') {
                 langIndex = json;
@@ -236,9 +236,9 @@
         status: false,
         name: 'BMN',
         loggedInID: null,
-        scriptLink: 'https://raw.github.com/cringebot/source/master/basicBot.js',
+        scriptLink: 'https://raw.githack.com/cringebot/source/master/basicBot.js',
         cmdLink: null,
-        chatLink: 'https://raw.github.com/cringebot/basicBot/master/lang/en.json',
+        chatLink: 'https://raw.githack.com/cringebot/basicBot/master/lang/en.json',
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -246,8 +246,8 @@
         settings: {
             botName: 'BMN',
             language: 'english',
-            chatLink: 'https://raw.github.com/cringebot/basicBot/master/lang/en.json',
-            scriptLink: 'https://raw.github.com/cringebot/source/master/basicBot.js',
+            chatLink: 'https://raw.githack.com/cringebot/basicBot/master/lang/en.json',
+            scriptLink: 'https://raw.githack.com/cringebot/source/master/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
@@ -305,9 +305,9 @@
             songstats: true,
             commandLiteral: '!',
             blacklists: {
-                NSFW: 'https://raw.github.com/cringebot/custom/master/blacklists/NSFWlist.json',
-                OP: 'https://raw.github.com/cringebot/custom/master/blacklists/OPlist.json',
-                BANNED: 'https://raw.github.com/cringebot/custom/master/blacklists/BANNEDlist.json'
+                NSFW: 'https://raw.githack.com/cringebot/custom/master/blacklists/NSFWlist.json',
+                OP: 'https://raw.githack.com/cringebot/custom/master/blacklists/OPlist.json',
+                BANNED: 'https://raw.githack.com/cringebot/custom/master/blacklists/BANNEDlist.json'
             }
         },
         room: {
@@ -2917,7 +2917,7 @@
                         }));
                         var argument = msg.substring(cmd.length + 1);
 
-                        $.get('https://raw.github.com/cringebot/source/master/lang/langIndex.json', function(json) {
+                        $.get('https://raw.githack.com/cringebot/source/master/lang/langIndex.json', function(json) {
                             var langIndex = json;
                             var link = langIndex[argument.toLowerCase()];
                             if (typeof link === 'undefined') {
