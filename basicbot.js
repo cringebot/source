@@ -238,7 +238,7 @@
         loggedInID: null,
         scriptLink: 'https://raw.githack.com/cringebot/source/master/basicbot.js',
         cmdLink: null,
-        chatLink: 'https://raw.githack.com/cringebot/basicBot/master/lang/en.json',
+        chatLink: 'https://raw.githack.com/cringebot/source/master/lang/en.json',
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -246,7 +246,7 @@
         settings: {
             botName: 'BMN',
             language: 'english',
-            chatLink: 'https://raw.githack.com/cringebot/basicBot/master/lang/en.json',
+            chatLink: 'https://raw.githack.com/cringebot/source/master/lang/en.json',
             scriptLink: 'https://raw.githack.com/cringebot/source/master/basicBot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
