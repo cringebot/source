@@ -1169,7 +1169,7 @@
                 }));
                 user.ownSong = false;
             }
-            clearTimeout(basicBot.room.autoskipTimer);se
+            clearTimeout(basicBot.room.autoskipTimer);
             if (basicBot.settings.autoskip) {
                 var remaining = obj.media.duration * 1000;
                 var startcid = API.getMedia().cid;
