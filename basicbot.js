@@ -236,7 +236,7 @@
         status: false,
         name: 'BMN',
         loggedInID: null,
-        scriptLink: 'https://raw.githack.com/cringebot/source/master/bmnbot.js',
+        scriptLink: 'https://raw.githack.com/cringebot/source/master/basicbot.js',
         cmdLink: null,
         chatLink: 'https://raw.githack.com/cringebot/basicBot/master/lang/en.json',
         chat: null,
