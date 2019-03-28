@@ -731,7 +731,7 @@
             },
             afkCheck: function() {
                 if (!basicBot.status || !basicBot.settings.afkRemoval) return void(0);
-                var rank = basicBot.roomUtilities.rankToNumber(basicBot.settings.afkRankCheck);
+                //var rank = basicBot.roomUtilities.rankToNumber(basicBot.settings.afkRankCheck);
                 var djlist = API.getWaitList();
                 var lastPos = Math.min(djlist.length, basicBot.settings.afkpositionCheck);
                 if (lastPos - 1 > djlist.length) return void(0);
@@ -741,7 +741,7 @@
                         var user = basicBot.userUtilities.lookupUser(id);
                         if (typeof user !== 'boolean') {
                             var plugUser = basicBot.userUtilities.getUser(user);
-                         //   if (rank !== null && basicBot.userUtilities.getPermission(plugUser) <= rank) {
+                           if (rank !== null && basicBot.userUtilities.getPermission(plugUser) <= rank) {
                                 var name = plugUser.username;
                                 var lastActive = basicBot.userUtilities.getLastActivity(user);
                                 var inactivity = Date.now() - lastActive;
@@ -788,7 +788,7 @@
                                     }
                                 }
                             }
-         //               }
+                        }
                     }
                 }
             },
@@ -1035,7 +1035,7 @@
             }
         },
         eventDjadvance: function(obj) {
-	   // if (!obj.dj) return;
+	    if (!obj.dj) return;
             if (basicBot.settings.autowoot) {
                 $('#woot').click(); // autowoot
             }
@@ -1169,12 +1169,12 @@
                 }));
                 user.ownSong = false;
             }
-           // clearTimeout(basicBot.room.autoskipTimer);
+            clearTimeout(basicBot.room.autoskipTimer);
             if (basicBot.settings.autoskip) {
                 var remaining = obj.media.duration * 1000;
                 var startcid = API.getMedia().cid;
                 basicBot.room.autoskipTimer = setTimeout(function() {
-		//if (!API.getMedia()) return;
+		if (!API.getMedia()) return;
                     var endcid = API.getMedia().cid;
                     if (startcid === endcid) {
                         //API.sendChat('Song stuck, skipping...');
