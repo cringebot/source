@@ -247,7 +247,7 @@
             botName: 'BMN',
             language: 'english',
             chatLink: 'https://raw.githack.com/cringebot/source/master/lang/en.json',
-            scriptLink: 'https://raw.githack.com/cringebot/source/master/basicBot.js',
+            scriptLink: 'https://raw.githack.com/cringebot/source/master/basicbot.js',
             roomLock: false, // Requires an extension to re-load the script
             startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
