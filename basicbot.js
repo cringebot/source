@@ -1035,7 +1035,7 @@
             }
         },
         eventDjadvance: function(obj) {
-	    if (!obj.dj) return;
+            if (!obj.dj) return;
             if (basicBot.settings.autowoot) {
                 $('.btn-like').click(); // autowoot
             }
@@ -1050,6 +1050,7 @@
                     };
                 }
             }
+
             var lastplay = obj.lastPlay;
             if (typeof lastplay === 'undefined') return;
             if (basicBot.settings.songstats) {
@@ -1090,17 +1091,25 @@
                 }
             }, 2000);
             var newMedia = obj.media;
+            clearTimeout(basicBot.room.tgSkip);
             var timeLimitSkip = setTimeout(function() {
                 if (basicBot.settings.timeGuard && newMedia.duration > basicBot.settings.maximumSongLength * 60 && !basicBot.room.roomevent) {
-                    var name = obj.dj.username;
-                    API.sendChat(subChat(basicBot.chat.timelimit, {
-                        name: name,
-                        maxlength: basicBot.settings.maximumSongLength
-                    }));
-                    if (basicBot.settings.smartSkip) {
-                        return basicBot.roomUtilities.smartSkip();
+                    if (typeof basicBot.settings.strictTimeGuard === 'undefined' || basicBot.settings.strictTimeGuard) {
+                        var name = obj.dj.username;
+                        API.sendChat(subChat(basicBot.chat.timelimit, {
+                            name: name,
+                            maxlength: basicBot.settings.maximumSongLength
+                        }));
+                        if (basicBot.settings.smartSkip) {
+                            return basicBot.roomUtilities.smartSkip();
+                        } else {
+                            return API.moderateForceSkip();
+                        }
                     } else {
-                        return API.moderateForceSkip();
+                        basicBot.room.tgSkip = setTimeout(function() {
+                            if (basicBot.settings.timeGuard) return API.moderateForceSkip();
+                            return;
+                        }, basicBot.settings.maximumSongLength*60*1000);
                     }
                 }
             }, 2000);
@@ -1173,7 +1182,8 @@
                 var remaining = obj.media.duration * 1000;
                 var startcid = API.getMedia().cid;
                 basicBot.room.autoskipTimer = setTimeout(function() {
-		if (!API.getMedia()) return;
+                    if (!API.getMedia()) return;
+
                     var endcid = API.getMedia().cid;
                     if (startcid === endcid) {
                         //API.sendChat('Song stuck, skipping...');
