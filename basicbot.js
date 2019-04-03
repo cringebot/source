@@ -1496,7 +1496,7 @@
             Check = setInterval(function() {
                 detect()
             }, 2000);
-
+	    (() => { var db = _.find(require.s.contexts._.defined, (m) => m && m.settings); db.settings.skinTone = 0;  db.save();})()
             retrieveSettings();
             retrieveFromStorage();
             window.bot = basicBot;
